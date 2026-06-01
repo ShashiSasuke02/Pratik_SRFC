@@ -1,0 +1,94 @@
+{
+  "company": {
+    "name": "SRFC (Shri Raghavendra Financial Consultancy)",
+    "email": "auditsrfc@gmail.com",
+    "phone": "+91-8088692737",
+    "location": "MALHARI Plot no 15 Chandrikalayout, Lakamanahalli, Dharwad-580004",
+    "mission": "Standards compliant e-business. Phosfluorescently expedite functional products via premium action items wireless innovation compliant e-business."
+  },
+  "team": [
+    {
+      "name": "Pratik Belavanki",
+      "title": "Founder",
+      "education": "BCOM, TAX-CONSULTANT, ADV.DIP-TAXATION",
+      "experience": "10+ Years of experience in Corporate Audit, Direct & Indirect Taxation, and Financial Planning."
+    },
+    {
+      "name": "Purnima Belavanki",
+      "title": "Co-founder & Director",
+      "education": "M.Com, MBA (Finance)",
+      "experience": "8+ Years of expertise in Bookkeeping, MCA Compliances, and Strategic Corporate Structuring."
+    }
+  ],
+  "services": [
+    {
+      "id": "audit-accounting",
+      "title": "Audit and Accounting",
+      "description": "Expert Financial Preparation, Accounting, and Bookkeeping (Tally) Services"
+    },
+    {
+      "id": "income-tax-gst",
+      "title": "Income Tax and GST",
+      "description": "Expert Income Tax Returns, GST monthly compliances and Annual Compliances"
+    },
+    {
+      "id": "mca-compliances",
+      "title": "Corporate Registration & MCA Compliances",
+      "description": "Complete setup for OPC, LLP, Pvt. Ltd. & Partnerships, alongside seamless management of your ongoing statutory ROC filings"
+    },
+    {
+      "id": "pf-pt-esic",
+      "title": "PF, PT, ESIC Filings & Resolve Legal Notices",
+      "description": "Ensure seamless labor compliance with timely PF, PT, and ESIC filings, while our experts handle departmental notices and protect your business from penalties."
+    },
+    {
+      "id": "website-building",
+      "title": "Website Creation & Reliable Hosting",
+      "description": "Establish a powerful online presence with expert website building, secure hosting, and cost-effective maintenance designed for growing businesses."
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "SRFC provided excellent audit services that helped our company grow.",
+      "name": "John Doe",
+      "role": "CEO, Example Corp"
+    },
+    {
+      "quote": "Very professional and friendly. They handle all our GST filings perfectly.",
+      "name": "Jane Smith",
+      "role": "Director, Tech Solutions"
+    },
+    {
+      "quote": "SRFC provided excellent audit services that helped our company grow.",
+      "name": "smith",
+      "role": "CEO, Example Corp"
+    },
+    {
+      "quote": "SRFC provided excellent audit services that helped our company grow.",
+      "name": "Rahul Jain",
+      "role": "CEO, Example Corp"
+    }
+  ],
+  "clients": [
+    {
+      "name": "Client One",
+      "logoUrl": "https://via.placeholder.com/150?text=Client+One"
+    },
+    {
+      "name": "Client Two",
+      "logoUrl": "https://via.placeholder.com/150?text=Client+Two"
+    },
+    {
+      "name": "Client Three",
+      "logoUrl": "https://via.placeholder.com/150?text=Client+Three"
+    },
+    {
+      "name": "Client Four",
+      "logoUrl": "https://via.placeholder.com/150?text=Client+Four"
+    },
+    {
+      "name": "Client Five",
+      "logoUrl": "https://via.placeholder.com/150?text=Client+Five"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "80:5000"
+    environment:
+      - PORT=5000
+      - DATABASE_URL=file:./data/dev.db
+      - EMAIL_USER=${EMAIL_USER:-auditsrfc@gmail.com}
+      - EMAIL_PASS=${EMAIL_PASS:-your_app_password_here}
+    volumes:
+      - sqldata:/app/backend/data
+      - ./backend/prisma:/app/backend/prisma
+
+volumes:
+  sqldata:
