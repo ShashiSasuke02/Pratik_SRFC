@@ -10,41 +10,91 @@
     {
       "name": "Pratik Belavanki",
       "title": "Founder",
-      "education": "BCOM, TAX-CONSULTANT, ADV.DIP-TAXATION",
-      "experience": "10+ Years of experience in Corporate Audit, Direct & Indirect Taxation, and Financial Planning."
+      "education": "B.COM, TAX-CONSULTANT, ADV.DIP-TAXATION",
+      "experience": "Master in Corporate Audit, Direct & Indirect Taxation, and Financial Planning."
     },
     {
       "name": "Purnima Belavanki",
       "title": "Co-founder & Director",
       "education": "M.Com, MBA (Finance)",
-      "experience": "8+ Years of expertise in Bookkeeping, MCA Compliances, and Strategic Corporate Structuring."
+      "experience": "Expert in Bookkeeping, MCA Compliances, and Strategic Corporate Structuring."
     }
   ],
   "services": [
     {
       "id": "audit-accounting",
       "title": "Audit and Accounting",
-      "description": "Expert Financial Preparation, Accounting, and Bookkeeping (Tally) Services"
+      "description": "Expert Financial Preparation, Accounting, and Bookkeeping (Tally) Services",
+      "features": [
+        "Comprehensive statutory audits",
+        "Day-to-day bookkeeping in Tally",
+        "Financial statement preparation",
+        "Internal control reviews"
+      ],
+      "pricing": {
+        "startingAt": "₹5,000 / month",
+        "note": "Pricing varies based on transaction volume"
+      }
     },
     {
       "id": "income-tax-gst",
       "title": "Income Tax and GST",
-      "description": "Expert Income Tax Returns, GST monthly compliances and Annual Compliances"
+      "description": "Expert Income Tax Returns, GST monthly compliances and Annual Compliances",
+      "features": [
+        "Individual and Corporate IT Returns",
+        "Monthly and Quarterly GST Filings",
+        "Tax planning and advisory",
+        "Representation before tax authorities"
+      ],
+      "pricing": {
+        "startingAt": "₹1,000 / filing",
+        "note": "Custom packages for annual retainers"
+      }
     },
     {
       "id": "mca-compliances",
-      "title": "Corporate Registration & MCA Compliances",
-      "description": "Complete setup for OPC, LLP, Pvt. Ltd. & Partnerships, alongside seamless management of your ongoing statutory ROC filings"
+      "title": "MCA Compliances",
+      "description": "Expert in MCA Compliances, Company Formation, and Annual Returns",
+      "features": [
+        "Private Limited & LLP Registration",
+        "Annual ROC Filings",
+        "Director KYC compliances",
+        "Change in corporate structure/directors"
+      ],
+      "pricing": {
+        "startingAt": "₹10,000",
+        "note": "For standard company incorporation"
+      }
     },
     {
       "id": "pf-pt-esic",
       "title": "PF, PT, ESIC Filings & Resolve Legal Notices",
-      "description": "Ensure seamless labor compliance with timely PF, PT, and ESIC filings, while our experts handle departmental notices and protect your business from penalties."
+      "description": "Ensure seamless labor compliance with timely PF, PT, and ESIC filings, while our experts handle departmental notices and protect your business from penalties.",
+      "features": [
+        "Monthly PF and ESIC return filing",
+        "Professional Tax (PT) enrollment and returns",
+        "Handling and resolving departmental legal notices",
+        "Labor law compliance audits"
+      ],
+      "pricing": {
+        "startingAt": "₹2,500 / month",
+        "note": "Depends on total employee count"
+      }
     },
     {
       "id": "website-building",
       "title": "Website Creation & Reliable Hosting",
-      "description": "Establish a powerful online presence with expert website building, secure hosting, and cost-effective maintenance designed for growing businesses."
+      "description": "Establish a powerful online presence with expert website building, secure hosting, and cost-effective maintenance designed for growing businesses.",
+      "features": [
+        "Custom responsive website design",
+        "Secure cloud hosting setup",
+        "Domain registration & SSL certificates",
+        "Ongoing technical maintenance and updates"
+      ],
+      "pricing": {
+        "startingAt": "₹14,999",
+        "note": "Includes 1 year of Hosting, Domain Name, SSL Certificates & Maintenance"
+      }
     }
   ],
   "testimonials": [
@@ -89,6 +139,66 @@
     {
       "name": "Client Five",
       "logoUrl": "https://via.placeholder.com/150?text=Client+Five"
+    }
+  ],
+  "history": [
+    {
+      "year": "2010",
+      "title": "Foundation",
+      "description": "SRFC was founded with a vision to streamline corporate finances and taxation."
+    },
+    {
+      "year": "2015",
+      "title": "Expansion",
+      "description": "Expanded services to include comprehensive MCA compliances and strategic structuring."
+    },
+    {
+      "year": "2020",
+      "title": "Digital Transformation",
+      "description": "Embraced digital accounting solutions, enabling remote audits and faster turnarounds."
+    },
+    {
+      "year": "2024",
+      "title": "Industry Leaders",
+      "description": "Recognized as a leading financial consultancy firm in Dharwad, trusted by hundreds of clients."
+    }
+  ],
+  "values": [
+    {
+      "title": "Integrity",
+      "description": "We uphold the highest standards of transparency and honesty in all our financial dealings."
+    },
+    {
+      "title": "Excellence",
+      "description": "We don't just meet standards; we strive to exceed expectations with premium service."
+    },
+    {
+      "title": "Innovation",
+      "description": "Continuously adopting the latest financial technologies to better serve our clients."
+    },
+    {
+      "title": "Client-Centric",
+      "description": "Your business growth is our primary focus. We engineer solutions tailored to you."
+    }
+  ],
+  "certifications": [
+    "Certified Tax Consultants",
+    "ISO 9001:2015 Quality Management",
+    "Advanced Diploma in Taxation",
+    "Registered MCA Compliance Agents"
+  ],
+  "socials": [
+    {
+      "platform": "Linkedin",
+      "url": "https://www.linkedin.com"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://www.facebook.com"
     }
   ]
 }

@@ -1,0 +1,28 @@
+# ── Build context exclusions ──────────────────────────────────────────────────
+
+# Node dependencies (never ship these, npm install runs inside Docker)
+node_modules
+*/node_modules
+
+# Frontend build output (built inside Docker in Stage 1)
+frontend/dist
+
+# Environment secrets — NEVER bake into the image
+.env
+**/.env
+
+# SQLite database files — live on a volume, not in the image
+**/*.db
+**/*.db-journal
+
+# Git history
+.git
+.gitignore
+
+# Editor / OS clutter
+.vscode
+.DS_Store
+Thumbs.db
+
+# Agents / internal tooling
+.agents

@@ -55,7 +55,13 @@ export default function Contact() {
   };
 
   return (
-    <div className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen">
+      {/* BACKGROUND WRAPPER */}
+      <div className="fixed inset-0 z-[-1] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/Gemini.png')" }}>
+        <div className="absolute inset-0 bg-[#0F0F23]/85 backdrop-blur-sm"></div>
+      </div>
+
+      <div className="relative z-10 py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       {/* Header */}
       <div className="text-center mb-16">
@@ -222,6 +228,7 @@ export default function Contact() {
         </div>
 
       </div>
+    </div>
     </div>
   );
 }

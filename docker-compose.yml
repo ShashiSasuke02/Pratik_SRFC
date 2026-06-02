@@ -1,18 +1,33 @@
-version: '3.8'
-
 services:
   web:
     build: .
     ports:
       - "80:5000"
+    env_file:
+      - ./backend/.env
     environment:
+      # Core
       - PORT=5000
-      - DATABASE_URL=file:./data/dev.db
+      - DATABASE_URL=file:./prisma/dev.db
+
+      # Email provider switch: "gmail" or "brevo"
+      - EMAIL_PROVIDER=${EMAIL_PROVIDER:-gmail}
+
+      # Gmail
       - EMAIL_USER=${EMAIL_USER:-auditsrfc@gmail.com}
-      - EMAIL_PASS=${EMAIL_PASS:-your_app_password_here}
+      - EMAIL_PASS=${EMAIL_PASS:-}
+
+      # Brevo (Sendinblue)
+      - BREVO_SMTP_USER=${BREVO_SMTP_USER:-}
+      - BREVO_SMTP_KEY=${BREVO_SMTP_KEY:-}
+
+      # Sender / recipient addresses
+      - EMAIL_FROM_ADDRESS=${EMAIL_FROM_ADDRESS:-auditsrfc@gmail.com}
+      - EMAIL_TO_ADDRESS=${EMAIL_TO_ADDRESS:-auditsrfc@gmail.com}
+
     volumes:
-      - sqldata:/app/backend/data
-      - ./backend/prisma:/app/backend/prisma
+      # Persist the SQLite database across container restarts
+      - sqldata:/app/backend/prisma
 
 volumes:
   sqldata:

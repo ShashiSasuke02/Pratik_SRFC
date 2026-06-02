@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Briefcase, Calculator, Building2, FileCheck2, Globe } from 'lucide-react';
+import { Briefcase, Calculator, Building2, FileCheck2, Globe } from 'lucide-react';
 
 export default function Home() {
   const [config, setConfig] = useState<any>(null);
@@ -42,29 +42,24 @@ export default function Home() {
             Together We can Make <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E11D48] to-white">Business Great Again</span>
           </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mb-10 leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mb-10 leading-relaxed">
             Optimize your tax strategy and streamline your corporate finances at an affordable cost. We don't just crunch numbers; we engineer business growth.
           </p>
-          <Link 
-            to="/contact" 
-            className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white bg-[#E11D48] rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(225,29,72,0.4)]"
-          >
-            <span className="relative z-10 flex items-center gap-2">JOIN US NOW <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" /></span>
-          </Link>
+
         </div>
       </section>
 
         {/* HORIZONTAL SCROLL SERVICES */}
         <section 
           id="services" 
-          className="relative z-20 w-full py-20 border-b border-gray-900"
+          className="relative z-20 w-full py-20"
         >
           {/* Dark overlay for readability */}
           <div className="absolute inset-0 bg-black/70"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="mb-12 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">Our Core Services</h2>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold text-white">Our Core Services</h2>
             <p className="text-gray-400 mt-2">Swipe to explore our comprehensive financial solutions</p>
           </div>
           
@@ -76,9 +71,10 @@ export default function Home() {
             
             <div className="flex animate-marquee group-hover:[animation-play-state:paused] w-max gap-6">
               {[...(config?.services || []), ...(config?.services || [])].map((service: any, idx: number) => (
-                <div 
+                <Link 
                   key={`${service.id}-${idx}`} 
-                  className="group bg-[#1E1B4B]/90 backdrop-blur-md rounded-2xl p-8 border border-gray-700 hover:border-[#E11D48] hover:bg-[#1E1B4B] transition-all hover:-translate-y-2 shadow-2xl overflow-hidden relative shrink-0 w-[85vw] sm:w-[350px]"
+                  to={`/services#${service.id}`}
+                  className="group bg-[#1E1B4B]/90 backdrop-blur-md rounded-2xl p-8 border border-gray-700 hover:border-[#E11D48] hover:bg-[#1E1B4B] transition-all hover:-translate-y-2 shadow-2xl overflow-hidden relative shrink-0 w-[85vw] sm:w-[350px] block"
                 >
                   <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
                     {getServiceIcon(service.id)}
@@ -86,23 +82,25 @@ export default function Home() {
                   {getServiceIcon(service.id)}
                   <h3 className="text-2xl font-heading font-bold text-white mb-3">{service.title}</h3>
                   <p className="text-gray-300">{service.description}</p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
         </div>
         </section>
-      </div>
 
-      {/* MISSION & VISION */}
-      <section className="py-24 bg-black border-t border-[#1E1B4B]">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-heading font-bold text-white mb-6">Our Mission & Vision</h2>
-          <p className="text-xl text-gray-400 leading-relaxed">
-            {config?.company?.mission || "Standards compliant e-business. Phosfluorescently expedite functional products via premium action items wireless innovation compliant e-business."}
-          </p>
-        </div>
-      </section>
+        {/* MISSION & VISION */}
+        <section className="relative z-20 w-full py-24 bg-transparent">
+          {/* Dark overlay for readability */}
+          <div className="absolute inset-0 bg-black/70"></div>
+          <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <h2 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">Our Mission & Vision</h2>
+            <p className="text-2xl md:text-3xl font-light text-gray-300 leading-relaxed">
+              {config?.company?.mission || "Standards compliant e-business. Phosfluorescently expedite functional products via premium action items wireless innovation compliant e-business."}
+            </p>
+          </div>
+        </section>
+      </div>
 
       {/* TEAM SECTION */}
       <section 
@@ -118,7 +116,7 @@ export default function Home() {
           </div> 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {config?.team?.map((member: any, idx: number) => (
-              <div key={idx} className="bg-black p-8 rounded-2xl border border-gray-800 text-center hover:border-gray-600 transition-colors">
+              <div key={idx} className="bg-transparent p-8 rounded-2xl border-4 border-black text-center hover:border-gray-900 hover:bg-white/5 transition-all shadow-lg">
                 <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-[#E11D48] to-[#1E1B4B] flex items-center justify-center mb-6">
                   <span className="text-3xl font-bold text-white">{member.name.charAt(0)}</span>
                 </div>
@@ -135,7 +133,7 @@ export default function Home() {
                     )}
                     {member.experience && (
                       <div>
-                        <p className="text-xs text-gray-500 uppercase tracking-wider font-bold mb-1">Experience & Expertise</p>
+                        <p className="text-xs text-gray-500 uppercase tracking-wider font-bold mb-1">Expertise</p>
                         <p className="text-sm text-gray-300 leading-relaxed">{member.experience}</p>
                       </div>
                     )}

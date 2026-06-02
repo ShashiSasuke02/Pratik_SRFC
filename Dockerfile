@@ -1,30 +1,37 @@
-# Stage 1: Build the React frontend
+# ─── Stage 1: Build the React frontend ───────────────────────────────────────
 FROM node:18-alpine AS frontend-builder
 WORKDIR /app/frontend
+
+# Install deps first (layer-cached unless package.json changes)
 COPY frontend/package*.json ./
 RUN npm install
+
+# Copy source and build
 COPY frontend/ .
 RUN npm run build
 
-# Stage 2: Setup the Express backend and serve the app
+# ─── Stage 2: Production backend ─────────────────────────────────────────────
 FROM node:18-alpine
 WORKDIR /app/backend
 
-# Install backend dependencies
+# Install backend production dependencies
 COPY backend/package*.json ./
-RUN npm install
+RUN npm install --omit=dev
 
-# Copy backend source code
+# Copy backend source (entrypoint.sh, server.js, data/, prisma/, etc.)
 COPY backend/ .
 
-# Generate Prisma Client
+# Generate Prisma Client (schema must be present at this point)
 RUN npx prisma generate
 
-# Copy the built frontend from Stage 1
+# Copy the built frontend from Stage 1 into the location the server expects
 COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
 
-# Expose the server port
+# Make the entrypoint script executable
+RUN chmod +x /app/backend/entrypoint.sh
+
+# Expose the application port
 EXPOSE 5000
 
-# Start the server
-CMD ["npm", "start"]
+# Use entrypoint.sh so Prisma migrate runs at startup against the live volume
+CMD ["sh", "/app/backend/entrypoint.sh"]

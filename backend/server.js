@@ -19,14 +19,36 @@ const getConfig = () => {
   return JSON.parse(fileData);
 };
 
-// Nodemailer transport
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+// ─── Dynamic Email Transport Factory ───────────────────────────────────────
+const createEmailTransporter = () => {
+  const provider = (process.env.EMAIL_PROVIDER || 'gmail').toLowerCase();
+
+  if (provider === 'brevo') {
+    console.log('[Email] Using Brevo (Sendinblue) SMTP provider');
+    return nodemailer.createTransport({
+      host: 'smtp-relay.brevo.com',
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.BREVO_SMTP_USER,
+        pass: process.env.BREVO_SMTP_KEY,
+      },
+    });
+  }
+
+  // Default: Gmail
+  console.log('[Email] Using Gmail SMTP provider');
+  return nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+};
+
+const transporter = createEmailTransporter();
+// ───────────────────────────────────────────────────────────────────────────
 
 // Endpoint to fetch config data (for the frontend to consume dynamically)
 app.get('/api/config', (req, res) => {
@@ -60,12 +82,15 @@ app.post('/api/contact', async (req, res) => {
       },
     });
 
-    // Send Email
+    // Send Email Notification
+    const fromAddress = process.env.EMAIL_FROM_ADDRESS || process.env.EMAIL_USER;
+    const toAddress = process.env.EMAIL_TO_ADDRESS || process.env.EMAIL_USER;
+
     const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER, // Sending to themselves
+      from: `"SRFC Website" <${fromAddress}>`,
+      to: toAddress,
       replyTo: email,
-      subject: `New Lead: ${service || 'General Inquiry'} from ${fullName}`,
+      subject: `🔔 New Lead: ${service || 'General Inquiry'} from ${fullName}`,
       text: `
 You have a new contact form submission on SRFC Website:
 
@@ -77,14 +102,48 @@ Service Interested: ${service || 'Not specified'}
 Message:
 ${message}
       `,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f9f9f9; padding: 20px; border-radius: 8px;">
+          <div style="background: #E11D48; padding: 20px; border-radius: 8px 8px 0 0; text-align: center;">
+            <h1 style="color: white; margin: 0; font-size: 22px;">🔔 New Lead from SRFC Website</h1>
+          </div>
+          <div style="background: white; padding: 24px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb;">
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr style="border-bottom: 1px solid #f3f4f6;">
+                <td style="padding: 12px 0; color: #6b7280; font-weight: bold; width: 150px;">Name</td>
+                <td style="padding: 12px 0; color: #111827;">${fullName}</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #f3f4f6;">
+                <td style="padding: 12px 0; color: #6b7280; font-weight: bold;">Email</td>
+                <td style="padding: 12px 0; color: #111827;"><a href="mailto:${email}" style="color: #E11D48;">${email}</a></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #f3f4f6;">
+                <td style="padding: 12px 0; color: #6b7280; font-weight: bold;">Mobile</td>
+                <td style="padding: 12px 0; color: #111827;">${mobile}</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #f3f4f6;">
+                <td style="padding: 12px 0; color: #6b7280; font-weight: bold;">Service</td>
+                <td style="padding: 12px 0; color: #111827;">${service || 'Not specified'}</td>
+              </tr>
+            </table>
+            <div style="margin-top: 20px;">
+              <p style="color: #6b7280; font-weight: bold; margin-bottom: 8px;">Message</p>
+              <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; padding: 16px; color: #374151; white-space: pre-wrap;">${message}</div>
+            </div>
+            <div style="margin-top: 20px; text-align: center;">
+              <a href="mailto:${email}" style="display: inline-block; background: #E11D48; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">Reply to ${fullName}</a>
+            </div>
+          </div>
+          <p style="text-align: center; color: #9ca3af; font-size: 12px; margin-top: 16px;">SRFC Website — Automated Lead Notification</p>
+        </div>
+      `,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        console.error("Error sending email:", error);
-        // We won't crash the request if email fails, but we'll log it.
+        console.error("[Email] Error sending email:", error);
       } else {
-        console.log('Email sent: ' + info.response);
+        console.log('[Email] Email sent successfully: ' + info.response);
       }
     });
 

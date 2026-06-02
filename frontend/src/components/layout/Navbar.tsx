@@ -33,7 +33,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-300 hover:text-white font-medium transition-colors">Home</Link>
             <Link to="/about" className="text-gray-300 hover:text-white font-medium transition-colors">About Us</Link>
-            <a href="#services" className="text-gray-300 hover:text-white font-medium transition-colors">Services</a>
+            <Link to="/services" className="text-gray-300 hover:text-white font-medium transition-colors">Services</Link>
             <Link 
               to="/contact" 
               className="px-5 py-2.5 rounded-md bg-[#E11D48] text-white font-medium hover:bg-[#be1639] transition-colors cursor-pointer"
@@ -60,7 +60,7 @@ export default function Navbar() {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link to="/" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#0F0F23]">Home</Link>
             <Link to="/about" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#0F0F23]">About Us</Link>
-            <a href="#services" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#0F0F23]">Services</a>
+            <Link to="/services" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#0F0F23]">Services</Link>
             <Link to="/contact" onClick={() => setIsOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium text-[#E11D48] hover:bg-[#0F0F23]">Contact Us</Link>
           </div>
         </div>
