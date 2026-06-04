@@ -10,21 +10,23 @@
     {
       "name": "Pratik Belavanki",
       "title": "Founder",
-      "education": "B.COM, TAX-CONSULTANT, ADV.DIP-TAXATION",
-      "experience": "Master in Corporate Audit, Direct & Indirect Taxation, and Financial Planning."
+      "image": "/Pratik.jpeg",
+      "education": "CMA-INTER, B.COM, TAX-CONSULTANT",
+      "experience": "Master in Corporate Audit, Direct & Indirect Taxation, Financial Planning, Bookkeeping & MCA Compliances."
     },
     {
       "name": "Purnima Belavanki",
       "title": "Co-founder & Director",
-      "education": "M.Com, MBA (Finance)",
-      "experience": "Expert in Bookkeeping, MCA Compliances, and Strategic Corporate Structuring."
+      "image": "/Purnima.jpeg",
+      "education": "BA",
+      "experience": "Expert in Strategic Planning & Execution"
     }
   ],
   "services": [
     {
       "id": "audit-accounting",
       "title": "Audit and Accounting",
-      "description": "Expert Financial Preparation, Accounting, and Bookkeeping (Tally) Services",
+      "description": "Expert Financial Preparation, Accounting, and Bookkeeping (Tally, QuickBooks) Services",
       "features": [
         "Comprehensive statutory audits",
         "Day-to-day bookkeeping in Tally",
@@ -100,67 +102,71 @@
   "testimonials": [
     {
       "quote": "SRFC provided excellent audit services that helped our company grow.",
-      "name": "John Doe",
-      "role": "CEO, Example Corp"
+      "name": "Amit Agarwal",
+      "role": "CEO, AmpleMart"
     },
     {
       "quote": "Very professional and friendly. They handle all our GST filings perfectly.",
-      "name": "Jane Smith",
+      "name": "Ritesh J",
       "role": "Director, Tech Solutions"
     },
     {
-      "quote": "SRFC provided excellent audit services that helped our company grow.",
-      "name": "smith",
-      "role": "CEO, Example Corp"
+      "quote": "SRFC provided excellent PF PT ESIC services and resolved our legal notices.",
+      "name": "Anjli Mukharji",
+      "role": "Manager, AJ Trading"
     },
     {
-      "quote": "SRFC provided excellent audit services that helped our company grow.",
-      "name": "Rahul Jain",
-      "role": "CEO, Example Corp"
+      "quote": "Very professional and affordable website developer. Will recomend to all my friends",
+      "name": "Akash M Jain",
+      "role": "Owner, Jain Store"
     }
   ],
   "clients": [
     {
-      "name": "Client One",
+      "name": "HCL Technologies Ltd",
       "logoUrl": "https://via.placeholder.com/150?text=Client+One"
     },
     {
-      "name": "Client Two",
+      "name": "Arvind Lifestyle Brands Ltd",
       "logoUrl": "https://via.placeholder.com/150?text=Client+Two"
     },
     {
-      "name": "Client Three",
+      "name": "Hafels India Pvt Ltd",
       "logoUrl": "https://via.placeholder.com/150?text=Client+Three"
     },
     {
-      "name": "Client Four",
+      "name": "Reckitt Benckiser India Pvt Ltd",
       "logoUrl": "https://via.placeholder.com/150?text=Client+Four"
     },
     {
-      "name": "Client Five",
+      "name": "AJ-Trading (Petroleum Distribution)",
       "logoUrl": "https://via.placeholder.com/150?text=Client+Five"
+    },
+    {
+      "name": "25+ Business clients",
+      "logoUrl": "https://via.placeholder.com/150?text=Client+Six"
     }
   ],
   "history": [
     {
-      "year": "2010",
+      "year": "2020",
       "title": "Foundation",
       "description": "SRFC was founded with a vision to streamline corporate finances and taxation."
     },
     {
-      "year": "2015",
+      "year": "2022",
       "title": "Expansion",
-      "description": "Expanded services to include comprehensive MCA compliances and strategic structuring."
+      "description": "Expanded services to include comprehensive MCA compliances and strategic structuring & GST"
     },
     {
-      "year": "2020",
+      "year": "2024",
       "title": "Digital Transformation",
       "description": "Embraced digital accounting solutions, enabling remote audits and faster turnarounds."
     },
     {
-      "year": "2024",
+      "year": "2026",
       "title": "Industry Leaders",
-      "description": "Recognized as a leading financial consultancy firm in Dharwad, trusted by hundreds of clients."
+      "description": "Recognized as a leading financial consultancy firm in Dharwad, trusted by 30+ clients."
     }
   ],
   "values": [
@@ -182,19 +188,20 @@
     }
   ],
   "certifications": [
-    "Certified Tax Consultants",
-    "ISO 9001:2015 Quality Management",
-    "Advanced Diploma in Taxation",
+    "Certified Us Taxation",
+    "QuickBooks",
+    "Power BI Certified",
+    "The Wallstreet School of Business ( Valuation & Advance Excel )",
     "Registered MCA Compliance Agents"
   ],
   "socials": [
     {
       "platform": "Linkedin",
-      "url": "https://www.linkedin.com"
+      "url": "https://www.linkedin.com/in/srfc-sri-raghavendra-financial-consultancy-a1b370370?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     },
     {
       "platform": "Instagram",
-      "url": "https://www.instagram.com"
+      "url": "https://www.instagram.com/srfc_finance?igsh=MW9keTNnOTZvZnlvdw%3D%3D&utm_source=qr"
     },
     {
       "platform": "Facebook",

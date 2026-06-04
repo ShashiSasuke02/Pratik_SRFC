@@ -78,15 +78,15 @@ export default function Contact() {
           <div className="bg-[#1E1B4B] p-8 rounded-2xl border border-gray-800">
             <h3 className="text-2xl font-heading font-bold text-white mb-6">Contact Information</h3>
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#0F0F23] flex items-center justify-center shrink-0 border border-gray-800">
+              <a href="https://maps.app.goo.gl/t5KPCJpoXfwSXBxKA" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 hover:opacity-80 transition-opacity cursor-pointer group">
+                <div className="w-12 h-12 rounded-full bg-[#0F0F23] flex items-center justify-center shrink-0 border border-gray-800 group-hover:border-[#E11D48] transition-colors">
                   <MapPin className="text-[#E11D48]" />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold mb-1">Our Location</h4>
+                  <h4 className="text-white font-bold mb-1 group-hover:text-[#E11D48] transition-colors">Our Location</h4>
                   <p className="text-gray-400">{config?.company?.location || 'MALHARI Plot no 15 chandrikalayout, lakamanahalli, Dharwad'}</p>
                 </div>
-              </div>
+              </a>
               
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-full bg-[#0F0F23] flex items-center justify-center shrink-0 border border-gray-800">
@@ -113,7 +113,7 @@ export default function Contact() {
           {/* Google Maps Embed */}
           <div className="w-full h-[300px] rounded-2xl overflow-hidden border border-gray-800 shadow-xl">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15383.693635956976!2d75.00690041132714!3d15.43574163013233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8d2afda2d7b4b%3A0xc6e4b85523a1a62d!2sLakamanahalli%2C%20Dharwad%2C%20Karnataka%20580004!5e0!3m2!1sen!2sin!4v1709292112345!5m2!1sen!2sin" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3845.9142940828006!2d75.0259171758844!3d15.435176456098338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8d3ebd7f17c7d%3A0x403d99c0dc0019a2!2sSRFC%20Tax%20%26%20Compliance%20Advisory%3A!5e0!3m2!1sen!2sin!4v1780415756353!5m2!1sen!2sin" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 

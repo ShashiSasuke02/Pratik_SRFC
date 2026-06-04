@@ -117,8 +117,12 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {config?.team?.map((member: any, idx: number) => (
               <div key={idx} className="bg-transparent p-8 rounded-2xl border-4 border-black text-center hover:border-gray-900 hover:bg-white/5 transition-all shadow-lg">
-                <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-[#E11D48] to-[#1E1B4B] flex items-center justify-center mb-6">
-                  <span className="text-3xl font-bold text-white">{member.name.charAt(0)}</span>
+                <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-[#E11D48] to-[#1E1B4B] flex items-center justify-center mb-6 overflow-hidden shadow-[0_0_20px_rgba(225,29,72,0.2)]">
+                  {member.image ? (
+                    <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top" />
+                  ) : (
+                    <span className="text-3xl font-bold text-white">{member.name.charAt(0)}</span>
+                  )}
                 </div>
                 <h3 className="text-2xl font-heading font-bold text-white mb-2">{member.name}</h3>
                 <p className="text-[#E11D48] font-medium tracking-wide uppercase text-sm mb-6">{member.title}</p>

@@ -101,8 +101,12 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
               {config?.team?.map((member: any, idx: number) => (
                 <div key={idx} className="bg-transparent p-8 rounded-2xl border-4 border-black text-center hover:border-gray-900 hover:bg-white/5 transition-all shadow-lg flex flex-col items-center">
-                  <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#E11D48] to-[#1E1B4B] flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(225,29,72,0.3)]">
-                    <span className="text-5xl font-bold text-white">{member.name.charAt(0)}</span>
+                  <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#E11D48] to-[#1E1B4B] flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(225,29,72,0.3)] overflow-hidden">
+                    {member.image ? (
+                      <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top" />
+                    ) : (
+                      <span className="text-5xl font-bold text-white">{member.name.charAt(0)}</span>
+                    )}
                   </div>
                   <h3 className="text-3xl font-heading font-bold text-white mb-2">{member.name}</h3>
                   <p className="text-[#E11D48] font-bold tracking-widest uppercase text-sm mb-6">{member.title}</p>

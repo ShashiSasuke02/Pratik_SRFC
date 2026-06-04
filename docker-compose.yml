@@ -2,7 +2,7 @@ services:
   web:
     build: .
     ports:
-      - "80:5000"
+      - "2222:5000"
     env_file:
       - ./backend/.env
     environment:
