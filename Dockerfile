@@ -27,7 +27,8 @@ RUN npx prisma generate
 # Copy the built frontend from Stage 1 into the location the server expects
 COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
 
-# Make the entrypoint script executable
+# Make the entrypoint script executable and fix Windows CRLF line endings
+RUN sed -i 's/\r$//' /app/backend/entrypoint.sh
 RUN chmod +x /app/backend/entrypoint.sh
 
 # Expose the application port
