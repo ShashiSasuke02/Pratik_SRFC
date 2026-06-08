@@ -25,7 +25,7 @@ export default function Navbar() {
                 SRFC
               </div>
               <span className="font-heading font-bold text-base md:text-xl text-white tracking-tight hidden lg:block">Shri Raghavendra Financial Consultancy</span>
-              <span className="font-heading font-bold text-xl text-white tracking-tight lg:hidden">SRFC</span>
+              <span className="font-heading font-bold text-sm sm:text-base text-white tracking-tight lg:hidden">Shri Raghavendra Financial Consultancy</span>
             </Link>
           </div>
 
